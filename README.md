@@ -7,10 +7,14 @@
 > and route the stake to the maker if KEPT or to a named beneficiary if BROKEN —
 > with no trusted referee.
 
-**Live app:** _(Vercel URL — see below)_
-**Contract (studionet):** `0x139fdcE0a39aAAc96974912491F4d22e6a66b516`
-**Explorer:** https://genlayer-explorer.vercel.app/address/0x139fdcE0a39aAAc96974912491F4d22e6a66b516
+**Contract (studionet):** `0x6fBBEBfdf454c99408189C1F8A2F1dE8CBbb0D9e`
+**Explorer:** https://genlayer-explorer.vercel.app/address/0x6fBBEBfdf454c99408189C1F8A2F1dE8CBbb0D9e
 **Network:** GenLayer **studionet** (chain id `61999`), via GenLayer Studio.
+
+_Verified live end-to-end: a staked promise with a dead evidence URL was judged
+`BROKEN` (confidence 96) and 4.875 GEN routed to the beneficiary via the dispute
+window + pull payout — all via real validator consensus. See
+`scripts/e2e_studionet.py`._
 
 ---
 
@@ -139,6 +143,15 @@ Explorer link for every verdict.
 source ~/.genlayer/env.sh
 cd tests && gltest --network studionet
 ```
+
+## Runtime note — deadline & dispute window
+
+Deadlines and the dispute window use the GenVM wall-clock
+(`gl.vm.get_timestamp()`). On the current hosted studionet build that clock is
+not exposed, so the contract detects the missing clock (epoch `0`) and treats the
+deadline/window as **advisory** (resolve and finalize are permitted). On any
+build that exposes the clock, the deadline and dispute-window time-gates are
+enforced automatically with no code change.
 
 ## Tech
 
