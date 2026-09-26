@@ -1,0 +1,9 @@
+{
+  "network": "studionet",
+  "chainId": 61999,
+  "deployer": "0x8b563A8c9eeF530300e92E26457D1AB001daEcC7",
+  "contract": "PledgeVault",
+  "address": "0x139fdcE0a39aAAc96974912491F4d22e6a66b516",
+  "tx": "0x4ef7f93d3788f6fd6dbb6e00b3b954d936540b558e8232e33c0d7ff601923cbc",
+  "explorer": "https://genlayer-explorer.vercel.app/address/0x139fdcE0a39aAAc96974912491F4d22e6a66b516"
+}
