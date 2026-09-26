@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+frontend/.env
+__pycache__/
+*.pyc
+.pytest_cache/
+.vercel
+.DS_Store
